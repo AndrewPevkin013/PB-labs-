@@ -1,12 +1,22 @@
 #include "stdio.h"
 #include "math.h"
-int main(void){
-    double alpha, z1, z2, pi = 3.1415926;
 
-    scanf_s("%lf", &alpha);
-    alpha = alpha*pi/180;  //Перевели с градусов в радианы
-    z1 = cos(alpha) + sin(alpha) + cos(3*alpha) + sin(3*alpha);
-    z2 = 2* sqrt(2) * cos(alpha) * sin(pi/4 + 2 * alpha);
-    printf("%.3f\t %.3f\n", z1, z2);
+double z1(double alp_rad){
+    return (2*sin(alp_rad));
+}
+
+double z2(double alp_rad){
+
+    return (sin(2*alp_rad) + sin(5*alp_rad) - sin(3*alp_rad))/(cos(alp_rad) + 1 - 2*(sin(2*alp_rad)*sin(2*alp_rad)));
+}
+
+int main(void){
+    int alpha;
+    double pi = 3.1415926;
+    scanf_s("%d", &alpha);
+    double alp_rad = alpha*pi/180;
+    z1(alp_rad);
+    z2(alp_rad);
+    printf("%lf  %lf", z1(alpha), z2(alpha));
     return 0;
 }
