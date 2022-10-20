@@ -7,7 +7,11 @@ int main(void)
 	int min = -50;
 	int max = 50;
 	scanf_s("%d", &num1);
-	printf("%d\n", num1 >= min && num1 <= max);
+
+	int x1 = max / num1;
+	int x2 = min / num1;
+
+	printf("%d\n", !!(x1 & x2));
 
 	scanf_s("%d", &num2);
 	bit = (num2 >> 19) & 1;
