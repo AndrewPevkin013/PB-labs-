@@ -5,7 +5,7 @@ int main()
     printf("Array \n");
     int arr[6];
     for (int i = 0; i < 6; i++) {
-        scanf_s("%d", &arr[i]);
+        scanf("%d", &arr[i]);
     }
     
     for (int i = 0; i < 6; i++) {
@@ -17,14 +17,14 @@ int main()
     int matrix1[2][2];
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
-            scanf_s("%d", &matrix1[i][j]);
+            scanf("%d", &matrix1[i][j]);
         }
     }
 
     int matrix2[2][2];
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
-            scanf_s("%d", &matrix2[i][j]);
+            scanf("%d", &matrix2[i][j]);
         }
     }
 
