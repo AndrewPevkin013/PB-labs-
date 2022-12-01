@@ -27,7 +27,7 @@ enum Book
 
 struct Point
 {
-    unsigned int keyboard : 3;
+    unsigned char keyboard : 3;
 };
 
 
