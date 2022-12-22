@@ -16,6 +16,13 @@ int NOD(int a, int b) {
     }
 }
 
+//int NOD(int a, int b) {
+  //if (a == b)
+    //return a;
+  //return NOD(a > b ? (b, a - b) : a, abs(b - a));
+
+//}
+
 int NOK(int a, int b)
 {
     return a * b / NOD(a, b);
