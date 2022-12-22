@@ -14,35 +14,36 @@ int main()
     printf("\n");
 
     printf("Matrix \n");
-    int matrix1[2][2];
-    for (int i = 0; i < 2; ++i) {
-        for (int j = 0; j < 2; ++j) {
+    int n;
+    int matrix1[n][n];
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             scanf("%d", &matrix1[i][j]);
         }
     }
 
-    int matrix2[2][2];
-    for (int i = 0; i < 2; ++i) {
-        for (int j = 0; j < 2; ++j) {
+    int matrix2[n][n];
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             scanf("%d", &matrix2[i][j]);
         }
     }
 
-    int matrix3[2][2];
-    for (int i = 0; i < 2; ++i) {
-        for (int j = 0; j < 2; ++j) {
+    int matrix3[n][n];
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             matrix3[i][j] = 0;
         }
     }
 
-    for (int i = 0; i < 2; ++i) {
-        for (int j = 0; j < 2; ++j) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             matrix3[i][j] += matrix1[i][j] * matrix2[i][j];
         }
     }
 
-    for (int i = 0; i < 2; ++i) {
-        for (int j = 0; j < 2; ++j) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             printf("%d ", matrix3[i][j]);
         }
         printf("\n");
