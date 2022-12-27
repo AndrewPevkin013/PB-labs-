@@ -1,4 +1,4 @@
-#include <stdio.h>
+nclude <stdio.h>
 #include <math.h>
 
 struct Tr {
@@ -8,16 +8,20 @@ struct Tr {
 
 };
 
-float S(struct Tr tr) {
-  return sqrt((tr.x1 - tr.x2) * (tr.x1 - tr.x2) + (tr.x1 - tr.x3) * (tr.x1 - tr.x3) +
-    (tr.x3 - tr.x2) * (tr.x3 - tr.x2) + (tr.y1 - tr.y2) * (tr.y1 - tr.y2) + (tr.y1 - tr.y3) * (tr.y1 - tr.y3) + (tr.y3 - tr.y2) * (tr.y3 - tr.y2));
+int sqr(int num) {
+
+  return num * num;
 }
 
-float P(struct Tr tran) {
+float S(struct Tr *tr) {
+  return sqrt(sqr(tr->x1 - tr->x2) + sqr(tr->x1 - tr->x3) + sqr(tr->x3 - tr->x2) + sqr(tr->y1 - tr->y2) + sqr(tr->y1 - tr->y3) + sqr(tr->y3 - tr->y2));
+}
+
+float P(struct Tr *tran) {
   float a, b, c;
-  a = sqrt(abs((tran.x1 - tran.x2) * (tran.x1 - tran.x2) + (tran.y1 - tran.y2) * (tran.y1 - tran.y2)));
-  b = sqrt(abs((tran.x1 - tran.x3) * (tran.x1 - tran.x3) + (tran.y1 - tran.y3) * (tran.y1 - tran.y3)));
-  c = sqrt(abs((tran.x3 - tran.x2) * (tran.x3 - tran.x2) + (tran.y3 - tran.y2) * (tran.y3 - tran.y2)));
+  a = sqrt(abs(sqr(tran->x1 - tran->x2) + sqr(tran->y1 - tran->y2)));
+  b = sqrt(abs(sqr(tran->x1 - tran->x3) + sqr(tran->y1 - tran->y3)));
+  c = sqrt(abs(sqr(tran->x3 - tran->x2) + sqr(tran->y3 - tran->y2)));
   return a + b + c;
 }
 
@@ -29,8 +33,8 @@ int main() {
   scanf_s("%d %d", &tran.x2, &tran.y2);
   scanf_s("%d %d", &tran.x3, &tran.y3);
 
-  float s = S(tran);
-  float p = P(tran);
+  float s = S(&tran);
+  float p = P(&tran);
   printf("%f\n", s);
   printf("%f\n", p);
 
