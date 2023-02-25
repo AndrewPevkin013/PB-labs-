@@ -1,0 +1,4 @@
+﻿  Sourse.cpp
+C:\Users\apevk\source\repos\Sourse\Sourse.cpp(26,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\apevk\source\repos\Sourse\Sourse.cpp(29,11): warning C4305: '=': truncation from 'double' to 'float'
+  Sourse.vcxproj -> C:\Users\apevk\source\repos\Sourse\x64\Debug\Sourse.exe
